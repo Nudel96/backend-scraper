@@ -1,0 +1,38 @@
+[project]
+name = "pat-backend"
+version = "0.1.0"
+description = "Backend service for bias scoring"
+requires-python = ">=3.11"
+authors = [{name="PAT"}]
+dependencies = [
+  "fastapi",
+  "pydantic~=2.0",
+  "sqlalchemy>=2.0",
+  "psycopg2-binary",
+  "alembic",
+  "redis",
+  "rq",
+  "structlog",
+  "pydantic-settings",
+  "prometheus-client",
+  "PyYAML",
+  "uvicorn",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-asyncio",
+  "httpx",
+  "mypy",
+  "types-redis",
+  "types-requests",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["api*", "core*", "infra*"]
