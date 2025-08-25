@@ -1,0 +1,11 @@
+version: 0.1.0
+pillars:
+  Macro:
+    components:
+      macro: 1.0
+  Sentiment:
+    components:
+      sentiment: 1.0
+  Trend:
+    components:
+      trend: 1.0
